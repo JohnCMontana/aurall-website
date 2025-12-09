@@ -4,8 +4,9 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-6 z-50 flex justify-center w-full px-4">
-      <div className="w-full bg-white/70 backdrop-blur-md border border-white/20 shadow-lg rounded-full px-8 py-2 flex items-center justify-between text-sm font-medium text-gray-700 dark:bg-black/70 dark:border-white/10 dark:text-gray-200">
+    <nav className="sticky top-3 z-50 flex justify-center w-full px-4">
+      <div className="w-full bg-white/70 backdrop-blur-md border border-white/20 shadow-sm rounded-full px-8 py-2 flex items-center justify-between text-sm font-normal text-gray-700
+                      dark:bg-black/70 dark:border-white/10 dark:text-gray-200">
         <Link href="/" className="hover:opacity-80 transition-opacity flex items-center">
           <Image
             src="/logos/aurall-logo-solo.png"
@@ -13,7 +14,7 @@ export default function Navbar() {
             width={120}
             height={120}
             priority
-            className="dark:hidden w-22 h-10 object-contain"
+            className="dark:hidden w-20 h-10 object-contain"
           />
           <Image
             src="/logos/aurall-logo-solo-white.png"
@@ -21,14 +22,11 @@ export default function Navbar() {
             width={120}
             height={120}
             priority
-            className="hidden dark:block w-22 h-10 object-contain"
+            className="hidden dark:block w-20 h-10 object-contain"
           />
         </Link>
         
         <div className="flex items-center gap-6">
-          <Link href="/" className="hover:text-black dark:hover:text-white transition-colors">
-            Inicio
-          </Link>
           <Link href="/features" className="hover:text-black dark:hover:text-white transition-colors">
             Productos
           </Link>
@@ -43,7 +41,8 @@ export default function Navbar() {
           </Link>
           <Link 
             href="/get-started" 
-            className="bg-black text-white px-6 py-4 rounded-full hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors"
+            className="bg-gray-100 px-6 py-3 rounded-full border-1 border-gray-200 hover:text-black hover:bg-gray-200
+                       dark:bg-white/10 dark:text-white dark:border-white/10 dark:hover:bg-gray-800 dark:hover:text-white transition-colors"
           >
             Comenzar
           </Link>
