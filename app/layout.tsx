@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
@@ -11,10 +11,7 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
   title: "Aurall",
@@ -27,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
       return (
-      <html lang="en">
+      <html lang="es">
         <body
-          className={`${montserrat.variable} ${geistMono.variable} antialiased`}
+          className={`${montserrat.variable} antialiased`}
         >
           <ThemeProvider
             attribute="class"
@@ -37,7 +34,7 @@ export default function RootLayout({
             enableSystem={false}
             disableTransitionOnChange
           >
-            <div className="max-w-[900px] mx-auto w-full relative">
+            <div className="max-w-[1240px] mx-auto w-full relative">
               <Navbar />
               {children}
             </div>

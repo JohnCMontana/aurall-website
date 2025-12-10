@@ -3,24 +3,48 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
+  --background: #ebebeb;
   --foreground: #171717;
+  --primary: #d73032;
+  --secondary: #110304;
+  --stroke: rgba(0,0,0,0.7);
+  --glow-red: rgba(220, 38, 38, 0.6);
+  --glow-blue: rgba(37, 99, 235, 0.6);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
   --font-sans: var(--font-montserrat);
-  --font-mono: var(--font-geist-mono);
 }
 
 .dark {
-  --background: #1a1a1a;
+  --background: #111111;
   --foreground: #ededed;
+  --primary: #d73032;
+  --secondary: #e9dcdd;
+  --stroke: rgba(255,255,255,0.85);
+  --glow-red: rgba(255, 88, 88, 0.85);
+  --glow-blue: rgba(88, 132, 255, 0.85);
+}
+
+html {
+  font-family: var(--font-montserrat), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-montserrat), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px var(--stroke);
+  text-shadow: -1px 0 var(--stroke), 0 1px var(--stroke), 1px 0 var(--stroke), 0 -1px var(--stroke);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px var(--glow-red), 0 0 20px var(--glow-red), 0 0 30px var(--glow-blue), 0 0 40px var(--glow-blue);
 }
