@@ -13,7 +13,7 @@ export default function Navbar() {
           width={120}
           height={120}
           priority
-          className="dark:hidden w-22 h-14 object-contain"
+          className="dark:hidden w-24 h-14 object-contain"
         />
         <Image
           src="/logos/aurall-logo-solo-white.png"
@@ -21,7 +21,7 @@ export default function Navbar() {
           width={120}
           height={120}
           priority
-          className="hidden dark:block w-22 h-14 object-contain"
+          className="hidden dark:block w-24 h-14 object-contain"
         />
       </Link>
 

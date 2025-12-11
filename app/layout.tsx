@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Space_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
@@ -11,6 +11,12 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
 
 
 export const metadata: Metadata = {
@@ -26,7 +32,7 @@ export default function RootLayout({
       return (
       <html lang="es">
         <body
-          className={`${montserrat.variable} antialiased`}
+          className={`${montserrat.variable} ${spaceMono.variable} antialiased`}
         >
           <ThemeProvider
             attribute="class"
