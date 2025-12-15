@@ -4,7 +4,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-3 z-50 flex items-center justify-between max-w-full">
+    <nav className="sticky top-0 z-50 flex items-center justify-between w-full py-4 bg-gradient-to-b from-background/100 via-background/90 to-transparent">
       {/* Logo Section */}
       <Link href="/" className="hover:opacity-80 transition-opacity flex items-center">
         <Image
