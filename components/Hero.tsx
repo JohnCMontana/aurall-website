@@ -6,12 +6,19 @@ export default function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center gap-6 px-4 mt-[120px]">
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[600px] h-[300px] bg-red-600/50 rounded-full blur-[120px]" />
+        <div className="w-[600px] h-[300px] rounded-full animate-cloud-gradient-blur" />
       </div>
-      <h1 className="relative z-10 text-6xl font-semibold text-center leading-tight font-space">
-        <span className="bg-gradient-to-r from-red-400 via-red-500 to-blue-500 bg-clip-text text-transparent">Grabación Inteligente</span> 
+      <h1 className="relative z-10 text-6xl font-normal text-center leading-tight font-space">
+        Grabación Inteligente
         <br />
-        <span className="font-normal text-gray-700 dark:text-gray-100">de Interacciones con <span className=" font-semibold bg-gradient-to-r from-red-400 to-blue-500 bg-clip-text text-transparent">IA</span></span>
+        de Interacciones con
+        <span className="
+          font-bold
+          bg-gradient-to-r from-red-400 to-blue-500
+          bg-clip-text text-transparent
+          drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]
+        "> IA</span>
+
       </h1>
       <p className="my-2 max-w-md text-center text-secondary">
         Automatiza, analiza y protege tus comunicaciones críticas en tiempo real.

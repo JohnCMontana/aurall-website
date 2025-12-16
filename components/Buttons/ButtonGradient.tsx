@@ -19,7 +19,7 @@ const ButtonGradient = ({ href, children, className = "" }: ButtonProps) => (
         borderRadius: "9999px",
       }}
     >
-      <span className="block rounded-full backdrop-blur-sm px-6 py-3 leading-none">
+      <span className="block backdrop-blur-sm px-6 py-3 leading-none">
         <span
           className="bg-clip-text text-transparent"
           style={{
