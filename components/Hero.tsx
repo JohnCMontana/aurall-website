@@ -1,14 +1,18 @@
 import ButtonGradient from "./Buttons/ButtonGradient";
 import ButtonVideo from "./Buttons/ButtonVideo";
 import BentoCard from "./BentoCard";
+import FeaturePill from "./others/FeaturePill";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center gap-6 px-4 mt-[120px]">
+    <section className="relative flex flex-col items-center justify-center gap-6 px-4 mt-[100px]">
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-[600px] h-[300px] rounded-full animate-cloud-gradient-blur" />
       </div>
-      <h1 className="relative z-10 text-6xl font-normal text-center leading-tight font-space">
+      <div className="relative z-10 mb-4">
+        <FeaturePill />
+      </div>
+      <h1 className="relative z-10 text-7xl font-normal text-center leading-tight font-space">
         Grabación Inteligente
         <br />
         de Interacciones con
@@ -21,7 +25,7 @@ export default function Hero() {
 
       </h1>
       <p className="my-2 max-w-md text-center text-secondary">
-        Automatiza, analiza y protege tus comunicaciones críticas en tiempo real.
+        Automatiza, analiza y protege tus comunicaciones críticas en tiempo real
       </p>
       <div className="relative flex items-center justify-center mb-10 gap-4 z-10">
         <ButtonVideo href="/video"/>
@@ -43,21 +47,25 @@ export default function Hero() {
                 title="Grabación Multimodal"
                 description="Multicanales de voz, pantallas, mensajería, posicionamiento y metadatos de comunicaciones."
                 className="md:col-span-2 md:row-span-2"
+                imageSrc="/images/hero/cards/grabacion-multimodal.png"
               />
               <BentoCard
                 title="Gestión Inteligente"
                 description="La gestión de grabaciones se automatiza con inteligencia artificial para decisiones más rápidas y precisas"
                 className="md:col-span-2 md:row-span-1"
+                imageSrc="/images/hero/GestionInteligente.png"
               />
               <BentoCard
                 title="Alta Seguridad"
-                description="Aplicación de controles de seguridad y cumplimiento de normativas legales (ENS, 27001, 22301, RGPD,…)"
+                description="Aplicación de controles de seguridad y cumplimiento de normativas legales (ENS, 27001, 22301, RGPD, …)"
                 className="md:col-span-2 md:row-span-3"
+                imageSrc="/images/hero/cards/alta-seguridad.png"
               />
               <BentoCard
                 title="Elija el entorno"
                 description="Instalación local 100% aislada (Todas las capacidades de IA sin internet) o despliegue cloud seguro."
                 className="md:col-span-2 md:row-span-2"
+                imageSrc="/images/hero/ElijaElEntorno.png"
               />
             </div>
           </div>
