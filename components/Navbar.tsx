@@ -4,57 +4,58 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between w-full py-4 bg-gradient-to-b from-background/100 via-background/90 to-transparent">
-      {/* Logo Section */}
-      <Link href="/" className="hover:opacity-80 transition-opacity flex items-center">
-        <Image
-          src="/logos/aurall-logo-solo.png"
-          alt="Aurall Logo"
-          width={120}
-          height={120}
-          priority
-          className="dark:hidden w-24 h-14 object-contain"
-        />
-        <Image
-          src="/logos/aurall-logo-solo-white.png"
-          alt="Aurall Logo"
-          width={120}
-          height={120}
-          priority
-          className="hidden dark:block w-24 h-14 object-contain"
-        />
-      </Link>
+    <nav className="w-full border-b border-foreground/10 bg-background/40 backdrop-blur-md">
+      <div className="relative max-w-[1240px] mx-auto flex items-center justify-between px-4 py-2">
+        
+        {/* Logo */}
+        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+          <Image
+            src="/logos/aurall-logo-solo.png"
+            alt="Aurall Logo"
+            width={120}
+            height={120}
+            priority
+            className="dark:hidden w-24 h-14 object-contain"
+          />
+          <Image
+            src="/logos/aurall-logo-solo-white.png"
+            alt="Aurall Logo"
+            width={120}
+            height={120}
+            priority
+            className="hidden dark:block w-24 h-14 object-contain"
+          />
+        </Link>
 
-      {/* Centered Navigation Pill */}
-      <div className="absolute left-1/2 -translate-x-1/2 bg-white/70 backdrop-blur-md border border-white/20 shadow-lg rounded-full px-8 py-3 flex items-center gap-8 text-sm font-medium text-gray-700 dark:bg-black/70 dark:border-white/10 dark:text-gray-200">
-        <Link href="/" className="hover:text-black dark:hover:text-white transition-colors">
-          Inicio
-        </Link>
-        <Link href="/features" className="hover:text-black dark:hover:text-white transition-colors">
-          Productos
-        </Link>
-        <Link href="/pricing" className="hover:text-black dark:hover:text-white transition-colors">
-          Soluciones
-        </Link>
-        <Link href="/about" className="hover:text-black dark:hover:text-white transition-colors">
-          Recursos
-        </Link>
-        <Link href="/about" className="hover:text-black dark:hover:text-white transition-colors">
-          Empresa
-        </Link>
-      </div>
-
-      {/* Right Actions Section */}
-      <div className="flex items-center gap-4">
-        <Link 
-          href="/get-started" 
-          className="bg-black text-white px-5 py-3 rounded-full hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors text-sm font-medium"
-        >
-          Comenzar
-        </Link>
-        <div className="pl-2 border-l border-gray-200 dark:border-gray-700">
-          <ThemeToggle />
+        {/* Center nav */}
+        <div className="absolute left-1/2 -translate-x-1/2 flex gap-8 text-sm text-foreground">
+          <Link href="/features" className="hover:opacity-70 transition">
+            Productos
+          </Link>
+          <Link href="/pricing" className="hover:opacity-70 transition">
+            Soluciones
+          </Link>
+          <Link href="/resources" className="hover:opacity-70 transition">
+            Recursos
+          </Link>
+          <Link href="/company" className="hover:opacity-70 transition">
+            Empresa
+          </Link>
         </div>
+
+        {/* Actions */}
+        <div className="flex items-center gap-4">
+          <Link
+            href="/get-started"
+            className="bg-foreground text-background px-5 py-2 rounded-full text-sm font-medium hover:opacity-90 transition"
+          >
+            Comenzar
+          </Link>
+          <div className="pl-2 border-l border-foreground/20">
+            <ThemeToggle />
+          </div>
+        </div>
+
       </div>
     </nav>
   );

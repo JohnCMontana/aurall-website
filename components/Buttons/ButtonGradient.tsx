@@ -1,37 +1,39 @@
+// components/Buttons/ButtonGradient.tsx
 import Link from "next/link";
+import React from "react";
 
-interface ButtonProps {
+interface ButtonGradientProps {
   href: string;
   children: React.ReactNode;
   className?: string;
 }
 
-const ButtonGradient = ({ href, children, className = "" }: ButtonProps) => (
-  <Link href={href} className={`inline-flex items-center justify-center ${className}`}>
-    <span
-      className="relative inline-block p-[1px] font-semibold transition-transform duration-200 hover:scale-105 align-middle"
-      style={{
-        border: "1px solid transparent",
-        borderImage:
-          "linear-gradient(to right, rgb(233,76,78), rgb(74,120,235)) 1",
-        boxShadow:
-          "0 0 15px rgba(233,76,78,0.35), 0 0 15px rgba(74,120,235,0.35)",
-        borderRadius: "9999px",
-      }}
-    >
-      <span className="block backdrop-blur-sm px-6 py-3 leading-none">
-        <span
-          className="bg-clip-text text-transparent"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgb(233,76,78), rgb(74,120,235))",
-          }}
-        >
-          {children}
-        </span>
+const ButtonGradient = ({
+  href,
+  children,
+  className = "",
+}: ButtonGradientProps) => {
+  return (
+    <Link href={href}>
+      <span
+        className={`
+          relative inline-flex items-center justify-center gap-2
+          px-5 py-2 font-semibold text-white
+          transition-transform duration-200 hover:scale-105
+          cursor-pointer overflow-hidden
+          rounded-full border border-white/50
+          ${className}
+        `}
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgb(233,76,78), rgb(74,120,235))",
+          boxShadow: "0 0 15px rgba(233,76,78,0.45)",
+        }}
+      >
+        {children}
       </span>
-    </span>
-  </Link>
-);
+    </Link>
+  );
+};
 
 export default ButtonGradient;

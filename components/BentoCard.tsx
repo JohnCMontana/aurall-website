@@ -15,16 +15,16 @@ export default function BentoCard({
 }: Props) {
   return (
     <div
-      className={`relative overflow-hidden rounded-4xl border border-white/10 bg-white/10 backdrop-blur-md p-6 sm:p-8 ${className}`}
+      className={`relative overflow-hidden rounded-4xl border border-foreground/10 bg-background/20 backdrop-blur-md p-6 sm:p-8 ${className}`}
     >
       <h3
-        className="text-4xl font-normal text-white"
+        className="text-4xl font-normal text-foreground/70"
         style={{ textShadow: "0 0 8px rgba(255, 255, 255, 0.7)" }}
       >
         {title}
       </h3>
 
-      <p className="mt-2 text-normal text-white/80">{description}</p>
+      <p className="mt-2 text-normal text-foreground/60">{description}</p>
 
       {imageSrc && (
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full opacity-60 flex items-end justify-center pointer-events-none">

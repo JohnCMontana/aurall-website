@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat, Space_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -18,7 +20,6 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
-
 export const metadata: Metadata = {
   title: "Aurall",
   description: "Sistema de Grabación de Comunicaciones Críticas",
@@ -26,26 +27,38 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-      return (
-      <html lang="es">
-        <body
-          className={`${montserrat.variable} ${spaceMono.variable} antialiased`}
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="es">
+      <body
+        className={`${montserrat.variable} ${spaceMono.variable} antialiased relative`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem={false}
-            disableTransitionOnChange
-          >
-            <div className="max-w-[1240px] mx-auto w-full relative">
-              <Navbar />
-              {children}
-            </div>
-          </ThemeProvider>
-        </body>
+          {/* Background beams */}
+          <div className="fixed inset-0 z-10 pointer-events-none">
+            <BackgroundBeams />
+          </div>
+
+          {/* Top gradient (above content, under navbar) */}
+          <div className="fixed top-0 left-0 w-full h-[80px] bg-gradient-to-b from-background via-background/90 to-transparent z-20 pointer-events-none" />
+
+          {/* Sticky navbar (FULL WIDTH, NOT CONSTRAINED) */}
+          <div className="sticky top-0 z-30 w-full">
+            <Navbar />
+          </div>
+
+          {/* Page content (CONSTRAINED) */}
+          <main className="relative z-10 max-w-[1240px] mx-auto w-full px-4">
+            {children}
+            <Footer />
+          </main>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

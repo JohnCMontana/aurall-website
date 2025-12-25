@@ -26,7 +26,7 @@ export default function FeaturePill() {
   useEffect(() => {
     if (textRef.current) {
       const textWidth = textRef.current.offsetWidth;
-      setWidth(textWidth + 36); // + left padding + circle spacing + extra right padding
+      setWidth(textWidth + 40); // + left padding + circle spacing + extra right padding
     }
   }, [index]);
 
@@ -59,7 +59,7 @@ export default function FeaturePill() {
       {/* Text */}
       <div
         ref={textRef}
-        className={`whitespace-nowrap text-foreground/60 text-sm transition-transform duration-300 ease-in-out ${
+        className={`whitespace-nowrap text-foreground/60 text-xs font-light transition-transform duration-300 ease-in-out ${
           animate ? "-translate-x-6 opacity-0" : "translate-x-0 opacity-100"
         }`}
       >

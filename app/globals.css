@@ -12,15 +12,6 @@
   --glow-blue: rgba(37, 99, 235, 0.6);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --font-sans: var(--font-montserrat);
-  --font-mono: var(--font-space-mono);
-}
-
 .dark {
   --background: #111111;
   --foreground: #ededed;
@@ -29,6 +20,15 @@
   --stroke: rgba(255,255,255,0.85);
   --glow-red: rgba(255, 88, 88, 0.85);
   --glow-blue: rgba(88, 132, 255, 0.85);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-space-mono);
 }
 
 html {
@@ -58,36 +58,37 @@ body {
   0% {
     background-position: 0% 50%;
     transform: translate(-50%, -50%) scale(1);
-    filter: blur(30px);
+    filter: blur(50px);
   }
   25% {
     background-position: 100% 50%;
     transform: translate(-40%, -60%) scale(1.1);
-    filter: blur(45px);
+    filter: blur(60px);
   }
   50% {
     background-position: 0% 50%;
     transform: translate(-50%, -50%) scale(1.2);
-    filter: blur(60px);
+    filter: blur(70px);
   }
   75% {
     background-position: 100% 50%;
     transform: translate(-60%, -40%) scale(1.1);
-    filter: blur(45px);
+    filter: blur(60px);
   }
   100% {
     background-position: 0% 50%;
     transform: translate(-50%, -50%) scale(1);
-    filter: blur(30px);
+    filter: blur(50px);
   }
 }
 
 .animate-cloud-gradient-blur {
   background: linear-gradient(270deg, #ef4444, #3b82f6);
   background-size: 400% 400%; /* Increased for more dramatic gradient shift */
-  animation: cloud-gradient-blur-animation 10s ease infinite; /* Shorter duration */
+  animation: cloud-gradient-blur-animation 20s ease infinite; /* Longer duration */
   position: absolute;
-  top: 50%;
+  top: 125%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
