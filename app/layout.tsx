@@ -3,7 +3,6 @@ import { Montserrat, Space_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -35,14 +34,10 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >
-          {/* Background beams */}
-          <div className="fixed inset-0 z-10 pointer-events-none">
-            <BackgroundBeams />
-          </div>
 
           {/* Top gradient (above content, under navbar) */}
           <div className="fixed top-0 left-0 w-full h-[80px] bg-gradient-to-b from-background via-background/90 to-transparent z-20 pointer-events-none" />

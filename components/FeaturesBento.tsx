@@ -2,7 +2,7 @@ import BentoCard from "./BentoCard";
 
 export default function FeaturesBento() {
   return (
-    <div className="relative z-10 w-full">
+    <div className="relative z-10 py-20 w-full">
             <div className="relative overflow-hidden rounded-[50px] backdrop-blur-md border border-foreground/10 bg-background/40">
               <div className="p-4 sm:p-6 md:p-8">
                 <div className="grid h-full grid-cols-1 md:grid-cols-4 auto-rows-[minmax(90px,auto)] gap-4 md:gap-6">

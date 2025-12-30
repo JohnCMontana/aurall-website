@@ -2,9 +2,14 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* -------------------------
+   Color variables
+------------------------- */
 :root {
   --background: #ebebeb;
   --foreground: #171717;
+  --text: #191919;
+  --invtext: #ffffff;
   --primary: #d73032;
   --secondary: #110304;
   --stroke: rgba(0,0,0,0.7);
@@ -15,6 +20,8 @@
 .dark {
   --background: #111111;
   --foreground: #ededed;
+  --text: #ffffff;
+  --invtext: #191919;
   --primary: #d73032;
   --secondary: #e9dcdd;
   --stroke: rgba(255,255,255,0.85);
@@ -22,25 +29,37 @@
   --glow-blue: rgba(88, 132, 255, 0.85);
 }
 
+/* -------------------------
+   Theme / Fonts
+------------------------- */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
   --font-sans: var(--font-montserrat);
   --font-mono: var(--font-space-mono);
 }
 
-html {
-  font-family: var(--font-montserrat), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-}
-
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-montserrat), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-family: var(--font-montserrat),
+               ui-sans-serif,
+               system-ui,
+               -apple-system,
+               "Segoe UI",
+               Roboto,
+               Arial,
+               "Noto Sans",
+               "Liberation Sans",
+               sans-serif;
+  scroll-behavior: smooth;
 }
 
+/* -------------------------
+   Text effects
+------------------------- */
 .text-outline {
   -webkit-text-stroke: 1px var(--stroke);
   text-shadow: -1px 0 var(--stroke), 0 1px var(--stroke), 1px 0 var(--stroke), 0 -1px var(--stroke);
@@ -51,44 +70,82 @@ body {
 }
 
 .font-space {
-  font-family: var(--font-space-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--font-space-mono),
+               ui-monospace,
+               SFMono-Regular,
+               Menlo,
+               Monaco,
+               Consolas,
+               "Liberation Mono",
+               "Courier New",
+               monospace;
 }
 
+/* -------------------------
+   Hero cloud animation
+------------------------- */
 @keyframes cloud-gradient-blur-animation {
   0% {
     background-position: 0% 50%;
     transform: translate(-50%, -50%) scale(1);
-    filter: blur(50px);
+    filter: blur(70px);
   }
   25% {
     background-position: 100% 50%;
     transform: translate(-40%, -60%) scale(1.1);
-    filter: blur(60px);
+    filter: blur(80px);
   }
   50% {
     background-position: 0% 50%;
     transform: translate(-50%, -50%) scale(1.2);
-    filter: blur(70px);
+    filter: blur(90px);
   }
   75% {
     background-position: 100% 50%;
     transform: translate(-60%, -40%) scale(1.1);
-    filter: blur(60px);
+    filter: blur(80px);
   }
   100% {
     background-position: 0% 50%;
     transform: translate(-50%, -50%) scale(1);
-    filter: blur(50px);
+    filter: blur(70px);
   }
 }
 
 .animate-cloud-gradient-blur {
-  background: linear-gradient(270deg, #ef4444, #3b82f6);
-  background-size: 400% 400%; /* Increased for more dramatic gradient shift */
-  animation: cloud-gradient-blur-animation 20s ease infinite; /* Longer duration */
+  background-image:
+    radial-gradient(circle at 25% 35%, var(--glow-red) 0%, transparent 55%),
+    radial-gradient(circle at 75% 65%, var(--glow-blue) 0%, transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.45) 0%, transparent 65%);
+  animation: cloud-gradient-blur-animation 10s ease infinite;
   position: absolute;
-  top: 125%;
-  left: 50%;
   transform: translate(-50%, -50%);
 }
 
+/* -------------------------
+   Logo Carousel
+------------------------- */
+@keyframes logo-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: logo-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+.scroll-track:hover {
+  animation-play-state: paused;
+}
+
+.logo-fade-container {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-track { animation: none; }
+}

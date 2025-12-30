@@ -4,16 +4,15 @@ import { useEffect, useState, useRef } from "react";
 
 type Feature = {
   text: string;
-  color: string; // circle color
 };
 
 const features: Feature[] = [
-  { text: "On-Premise", color: "#FF6B6B" },
-  { text: "IA", color: "#4ECDC4" },
-  { text: "Multimodal", color: "#FFD93D" },
-  { text: "Tiempo real", color: "#1A535C" },
-  { text: "Seguro", color: "#FF9F1C" },
-  { text: "Privacidad", color: "#6A4C93" },
+  { text: "On-Premise" },
+  { text: "IA"},
+  { text: "Multimodal"},
+  { text: "Tiempo real"},
+  { text: "Seguro"},
+  { text: "Privacidad"},
 ];
 
 export default function FeaturePill() {
@@ -26,7 +25,7 @@ export default function FeaturePill() {
   useEffect(() => {
     if (textRef.current) {
       const textWidth = textRef.current.offsetWidth;
-      setWidth(textWidth + 40); // + left padding + circle spacing + extra right padding
+      setWidth(textWidth);
     }
   }, [index]);
 
@@ -47,27 +46,19 @@ export default function FeaturePill() {
 
   return (
     <div
-      className="relative h-[30px] bg-foreground/10 backdrop-blur-md rounded-full flex items-center overflow-hidden select-none transition-[width] duration-300 ease-in-out"
+      className="relative h-[30px] py-5 bg-background/50 backdrop-blur-sm border border-foreground/20 rounded-full flex items-center overflow-hidden select-none transition-[width] duration-300 ease-in-out"
       style={{ width }}
     >
-      {/* Circle */}
-      <div
-        className={`w-2 h-2 rounded-full flex-shrink-0 ml-3 mr-2 transition-colors duration-300`}
-        style={{ backgroundColor: feature.color, boxShadow: `0 0 8px ${feature.color}` }}
-      ></div>
 
       {/* Text */}
       <div
         ref={textRef}
-        className={`whitespace-nowrap text-foreground/60 text-xs font-light transition-transform duration-300 ease-in-out ${
+        className={`whitespace-nowrap text-foreground/80 px-6 text-xs font-semibold transition-transform duration-300 ease-in-out ${
           animate ? "-translate-x-6 opacity-0" : "translate-x-0 opacity-100"
         }`}
       >
         {feature.text}
       </div>
-
-      {/* Extra right padding */}
-      <div className="w-3 flex-shrink-0"></div>
     </div>
   );
 }

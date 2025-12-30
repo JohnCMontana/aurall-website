@@ -18,7 +18,7 @@ const ButtonGradient = ({
       <span
         className={`
           relative inline-flex items-center justify-center gap-2
-          px-5 py-2 font-semibold text-white
+          px-5 py-4 font-semibold text-white
           transition-transform duration-200 hover:scale-105
           cursor-pointer overflow-hidden
           rounded-full border border-white/50

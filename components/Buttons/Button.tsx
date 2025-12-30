@@ -1,18 +1,18 @@
-// components/Buttons/ButtonVideo.tsx
+// components/Buttons/ButtonGradient.tsx
 import Link from "next/link";
 import React from "react";
 
-interface ButtonVideoProps {
+interface ButtonProps {
   href: string;
-  label?: string;
+  children: React.ReactNode;
   className?: string;
 }
 
-const ButtonVideo = ({
+const Button = ({
   href,
-  label = "Ver cómo funciona",
+  children,
   className = "",
-}: ButtonVideoProps) => {
+}: ButtonProps) => {
   return (
     <Link href={href}>
       <span
@@ -20,21 +20,17 @@ const ButtonVideo = ({
           relative inline-flex items-center gap-2 px-5 py-4 font-semibold
           transition-transform duration-200 hover:scale-105
           cursor-pointer overflow-hidden
-          bg-transparent
-          text-sm text-text
-          border border-foreground
+          bg-gradient-to-b from-foreground/70 to-foreground
+          text-sm
+          text-white dark:text-black
           rounded-full
           ${className}
         `}
-        aria-label={label}
       >
-        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z" />
-        </svg>
-        {label}
+        {children}
       </span>
     </Link>
   );
 };
 
-export default ButtonVideo;
+export default Button;
