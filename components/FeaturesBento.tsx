@@ -1,4 +1,4 @@
-import BentoCard from "./BentoCard";
+import BentoCard from "./cards/BentoCard";
 
 export default function FeaturesBento() {
   return (

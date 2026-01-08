@@ -17,7 +17,7 @@ const ButtonVideo = ({
     <Link href={href}>
       <span
         className={`
-          relative inline-flex items-center gap-2 px-5 py-4 font-semibold
+          relative inline-flex items-center gap-2 px-5 py-3 font-normal
           transition-transform duration-200 hover:scale-105
           cursor-pointer overflow-hidden
           bg-transparent

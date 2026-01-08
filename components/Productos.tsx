@@ -35,7 +35,7 @@ export default function Productos() {
       <div className="text-center mb-6 sm:mb-8">
         <SectionPill>Productos</SectionPill>
         <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground">
-          Soluciones Aurall
+          Arquitectura de Productos
         </h2>
         <p className="mt-2 text-secondary max-w-2xl mx-auto text-sm sm:text-base">
           Descubre nuestras soluciones para captura, análisis y automatización de comunicaciones.

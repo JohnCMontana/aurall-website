@@ -17,12 +17,12 @@ const Button = ({
     <Link href={href}>
       <span
         className={`
-          relative inline-flex items-center gap-2 px-5 py-4 font-semibold
+          relative inline-flex items-center gap-2 px-5 py-3 font-normal
           transition-transform duration-200 hover:scale-105
           cursor-pointer overflow-hidden
-          bg-gradient-to-b from-foreground/70 to-foreground
+          bg-gradient-to-b from-primary/70 to-primary
           text-sm
-          text-white dark:text-black
+          text-white
           rounded-full
           ${className}
         `}

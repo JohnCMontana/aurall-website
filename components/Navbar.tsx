@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
-import Button from "./Buttons/Button";
+import Button from "./buttons/Button";
 
 export default function Navbar() {
   return (
     <nav className="w-full border-b border-foreground/10 bg-background/30 backdrop-blur-md">
-      <div className="relative max-w-[1240px] mx-auto flex items-center justify-between px-4 py-2">
+      <div className="relative max-w-[1240px] mx-auto flex items-center justify-between px-4 py-1">
         
         {/* Logo */}
         <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">

@@ -1,5 +1,6 @@
 import FeaturesBento from "@/components/FeaturesBento";
 import Hero from "@/components/Hero";
+import HowItWorks from "@/components/HowItWorks";
 import Productos from "@/components/Productos";
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
       <Hero />
       <FeaturesBento />
       <Productos />
-
+      <HowItWorks />
     </div>
   )
 }
