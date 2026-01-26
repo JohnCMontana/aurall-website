@@ -32,9 +32,9 @@ export default function Productos() {
 
   return (
     <section id="Productos" className="relative z-10 w-full px-4 scroll-mt-[100px]">
-      <div className="text-center mb-6 sm:mb-8">
+      <div className="text-center mb-10 sm:mb-20">
         <SectionPill>Productos</SectionPill>
-        <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground">
+        <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-normal text-foreground">
           Arquitectura de Productos
         </h2>
         <p className="mt-2 text-secondary max-w-2xl mx-auto text-sm sm:text-base">
@@ -45,12 +45,22 @@ export default function Productos() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         {products.map(({ accent, headline, description, icon: Icon, href }) => (
           <Link key={accent} href={href} className="group">
-            <div className="relative overflow-hidden rounded-4xl border border-foreground/10 bg-background/70 card-surface backdrop-blur-md p-6 sm:p-8 h-full transition-transform duration-200 group-hover:-translate-y-0.5">
+            <div className="relative overflow-hidden rounded-4xl border border-foreground/20 bg-background/70 card-surface backdrop-blur-md p-6 sm:p-8 h-full transition-transform duration-200 group-hover:-translate-y-0.5">
               <div className="flex items-center justify-between">
-                <div className="text-2xl sm:text-3xl font-semibold tracking-tight text-foreground">
-                  {accent}
+                <div className="flex flex-col">
+                 <div className="text-2xl font-normal text-foreground">Aurall</div>
+                 <div
+                  className={`text-xl sm:text-5xl font-normal tracking-tight ${
+                    accent.includes("Quantum")
+                      ? "bg-gradient-to-r from-red-500 to-indigo-500 bg-clip-text text-transparent"
+                      : "text-foreground"
+                  }`}
+                >
+                  {accent.replace("Aurall ", "")}
                 </div>
-                <div className="w-9 h-9 rounded-full border border-foreground/10 badge-surface flex items-center justify-center">
+
+               </div>
+                <div className="w-9 h-9 rounded-full border border-foreground/20 badge-surface flex items-center justify-center">
                   <Icon className="w-4 h-4 text-foreground/70" />
                 </div>
               </div>

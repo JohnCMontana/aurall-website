@@ -20,7 +20,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aurall",
+  title: "Aurall | Grabación de Comunicaciones Críticas",
   description: "Sistema de Grabación de Comunicaciones Críticas",
 };
 
