@@ -70,7 +70,7 @@ export default function HowItWorks() {
         <div className="text-center mb-6 sm:mb-8">
           <SectionPill>Cómo funciona Aurall</SectionPill>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center text-foreground">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center text-gradient-main-title">
           Control total sobre tus <br />
           interacciones
         </h2>
@@ -78,7 +78,7 @@ export default function HowItWorks() {
           Desde la captura hasta la auditoría, sin dependencias externas.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {cardsData.map((card, index) => (
             <ImageCard
               key={index}

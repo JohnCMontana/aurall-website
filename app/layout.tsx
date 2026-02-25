@@ -29,30 +29,30 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body
-        className={`${montserrat.variable} ${spaceMono.variable} antialiased relative`}
-      >
+      <body className={`${montserrat.variable} ${spaceMono.variable} antialiased relative`}>
+        
+        {/*
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >
-
-          {/* Top gradient (above content, under navbar) */}
-          <div className="fixed top-0 left-0 w-full h-[80px] bg-gradient-to-b from-background via-background/90 to-transparent z-20 pointer-events-none" />
-
+        */}
+      
           {/* Sticky navbar (FULL WIDTH, NOT CONSTRAINED) */}
           <div className="sticky top-0 z-30 w-full">
             <Navbar />
           </div>
 
           {/* Page content (CONSTRAINED) */}
-          <main className="relative z-10 max-w-[1240px] mx-auto w-full px-4">
+          <main className="relative z-10 max-w-[1440px] mx-auto w-full px-4">
             {children}
             <Footer />
           </main>
+        {/*
         </ThemeProvider>
+      */}
       </body>
     </html>
   );

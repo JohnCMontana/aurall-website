@@ -29,6 +29,10 @@
   --glow-blue: rgba(88, 132, 255, 0.85);
 }
 
+.nav-link-item {
+  @apply bg-gray-500/10 text-foreground text-sm px-6 py-1 flex items-center gap-1;
+}
+
 /* -------------------------
    Theme / Fonts
 ------------------------- */

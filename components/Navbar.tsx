@@ -5,8 +5,8 @@ import Button from "./buttons/Button";
 
 export default function Navbar() {
   return (
-    <nav className="w-full border-b border-foreground/10 bg-background/20 backdrop-blur-md">
-      <div className="relative max-w-[1240px] mx-auto flex items-center justify-between px-4 py-1">
+    <nav className="w-full bg-background">
+      <div className="relative max-w-[1440px] mx-auto flex items-center justify-between px-4 py-3">
         
         {/* Logo */}
         <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
@@ -29,27 +29,33 @@ export default function Navbar() {
         </Link>
 
         {/* Center nav */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex gap-8 text-sm text-foreground">
-          <Link href="#Productos" className="hover:opacity-70 transition">
+        <div className="flex gap-4 ml-10 md:ml-20">
+          <Link href="#Productos" className="hover:opacity-70 transition nav-link-item">
             Productos
+            <span className="text-foreground text-2xl">+</span>
           </Link>
-          <Link href="#Soluciones" className="hover:opacity-70 transition">
+          <Link href="#Soluciones" className="hover:opacity-70 transition nav-link-item">
             Soluciones
           </Link>
-          <Link href="#Recursos" className="hover:opacity-70 transition">
+          <Link href="#Recursos" className="hover:opacity-70 transition nav-link-item">
             Recursos
+            <span className="text-foreground text-2xl">+</span>
           </Link>
-          <Link href="#Empresa" className="hover:opacity-70 transition">
+          <Link href="#Empresa" className="hover:opacity-70 transition nav-link-item">
             Empresa
           </Link>
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 ml-auto">
           <Button href="/">Comenzar</Button>
-          <div className="pl-2 border-l border-foreground/20">
-            <ThemeToggle />
-          </div>
+
+            {/* 
+            <div className="pl-2 border-l border-foreground/20">
+              <ThemeToggle />
+            </div> 
+            */}
+
         </div>
 
       </div>

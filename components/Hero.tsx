@@ -1,66 +1,49 @@
-import clients from "@/data/clients";
-import ButtonVideo from "./buttons/ButtonVideo";
-import ClientsCarousel from "./others/ClientsCarousel";
 import Button from "./buttons/Button";
 import Image from "next/image";
+import ButtonVideo from "./buttons/ButtonVideo";
+import HeroCards from "./HeroCards";
 
 export default function Hero() {
-  return (
-    <section className="relative flex flex-col items-center justify-center gap-4 sm:gap-6 px-4 min-h-screen">
-     
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 items-center max-w-7xl mx-auto pt-30">
-        {/* Left Column: Text and Buttons */}
-        <div className="md:col-span-2 flex flex-col items-center text-center md:text-left">
+  const cardsData = [
+    {
+      title: "Grabación Multimodal",
+      description: "Registre voz, pantallas, mensajería y metadatos en una única plataforma, de forma clara y centralizada.",
+    },
+    {
+      title: "Gestión Inteligente",
+      description: "Grabaciones organizadas y analizadas por IA para que encuentre lo importante al instante.",
+    },
+    {
+      title: "Alta Seguridad",
+      description: "Cumplimiento garantizado con ENS, ISO 27001, ISO 22301 y RGPD, con máxima protección de la información.",
+    },
+    {
+      title: "Elija el entorno",
+      description: "Despliegue en local, totalmente aislado, o en la nube, con seguridad y flexibilidad completas.",
+    },
+  ];
 
-          <h1 className="relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-5xl leading-tight text-gradient-main-title">
-            <span className="font-bold">Grabación Inteligente</span>
-            <br />
-            de Interacciones con
-            <span> IA</span>
+  return (
+    <section className="relative flex flex-col items-center justify-center h-screen">
+
+      <div className="relative z-10 grid gap-8 items-center max-w-7xl mx-auto">
+        <div className="md:col-span-1 flex flex-col items-center text-center gap-4">
+          <h1 className="relative z-10 font-semibold text-xl sm:text-3xl lg:text-6xl leading-tight">
+            Inteligencia que escucha <br />
+            Seguridad que protege
           </h1>
 
           <h3 className="my-4 pr-0 md:pr-8 text-secondary text-md sm:text-lg">
-            Automatiza, analiza y protege tus comunicaciones críticas en tiempo real
+            Plataforma avanzada de grabación y análisis multimodal con IA para entornos críticos y corporativos.
           </h3>
-          <div className="relative flex flex-col sm:flex-row items-center justify-center md:justify-start mb-8 sm:mb-10 gap-3 sm:gap-4 z-10">
+
+          <div className="relative flex flex-col sm:flex-row items-center justify-start mb-8 sm:mb-10 gap-3 sm:gap-4 z-10">
             <Button href="/get-started">Impulsa tu negocio</Button>
             <ButtonVideo href="/video"/>
           </div>
         </div>
-
-        {/* Right Column: Image */}
-        <div className="md:col-span-3 relative flex items-center justify-center w-full">
-          {/* Red Glow behind the image */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] rounded-full bg-[var(--glow-red)] opacity-50 filter blur-3xl z-[-1]"></div>
-          <Image
-            src="/images/hero/aurall-screen-ui.png"
-            alt="Hero Image"
-            width={1000}
-            height={700}
-            priority
-            layout="responsive"
-            objectFit="contain"
-            className="dark:hidden"
-          />
-          <Image
-            src="/images/hero/aurall-screen-ui-dark.png"
-            alt="Hero Image"
-            width={1000}
-            height={700}
-            priority
-            layout="responsive"
-            objectFit="contain"
-            className="hidden dark:block"
-          />
-          {/* Gradient overlay for fade-out effect */}
-          <div className="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-t from-background to-transparent"></div>
-        </div>
+        <HeroCards cards={cardsData} />
       </div>
-
-      <p className="relative z-10 text-foreground/70 pt-20 text-md sm:text-lg">
-        Con la confianza de startups líderes del sector
-      </p>
-      <ClientsCarousel clients={clients} />
     </section>
   );
 }
