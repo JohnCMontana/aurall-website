@@ -21,8 +21,8 @@ const ButtonVideo = ({
           transition-transform duration-200 hover:scale-105
           cursor-pointer overflow-hidden
           bg-transparent
-          text-sm text-primary/90
-          border border-primary/70
+          text-sm text-foreground/90
+          border border-foreground/70
           rounded-full
           ${className}
         `}

@@ -5,10 +5,10 @@ import Button from "./buttons/Button";
 
 export default function Navbar() {
   return (
-    <nav className="w-full bg-background/50 backdrop-blur-md border-b border-foreground/10">
+    <nav className="w-full bg-background/40 backdrop-blur-md border-b border-foreground/10">
       <div className="relative max-w-[1200px] mx-auto flex items-center justify-between px-4 py-1">
         {/* Logo */}
-        <Link href="/" className="flex items-center text-foreground/90 hover:opacity-80 transition-opacity">
+        <Link href="/" className="flex items-center text-foreground/90">
           <Image
             src="/logos/aurall-logo-solo.png"
             alt="Aurall Logo"

@@ -15,8 +15,8 @@ const LogoCarousel = ({ clients }: LogoCarouselProps) => {
               src={logo}
               alt={`Client ${i}`}
               className="
-                h-[40px] w-auto px-10 flex-shrink-0 object-contain
-                opacity-50 hover:opacity-100
+                h-[50px] w-auto px-10 flex-shrink-0 object-contain
+                opacity-80 hover:opacity-100
                 grayscale hover:grayscale-0
                 transition-all duration-300
                 dark:invert dark:brightness-110
