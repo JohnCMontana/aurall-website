@@ -1,28 +1,11 @@
 import Button from "./buttons/Button";
+import TiltedCard from "./cards/TiltedCard";
 import Image from "next/image";
 import ButtonVideo from "./buttons/ButtonVideo";
 import HeroCards from "./HeroCards";
+import { features } from "@/data/features";
 
 export default function Hero() {
-  const cardsData = [
-    {
-      title: "Grabación Multimodal",
-      description: "Registre voz, pantallas, mensajería y metadatos en una única plataforma, de forma clara y centralizada.",
-    },
-    {
-      title: "Gestión Inteligente",
-      description: "Grabaciones organizadas y analizadas por IA para que encuentre lo importante al instante.",
-    },
-    {
-      title: "Alta Seguridad",
-      description: "Cumplimiento garantizado con ENS, ISO 27001, ISO 22301 y RGPD, con máxima protección de la información.",
-    },
-    {
-      title: "Elija el entorno",
-      description: "Despliegue en local, totalmente aislado, o en la nube, con seguridad y flexibilidad completas.",
-    },
-  ];
-
   return (
     <section className="relative flex flex-col items-center justify-center h-screen">
 
@@ -41,8 +24,19 @@ export default function Hero() {
             <Button href="/get-started">Impulsa tu negocio</Button>
             <ButtonVideo href="/video"/>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
+            {features.map((feature, i) => (
+              <TiltedCard
+                key={i}
+                title={feature.title}
+                description={feature.description}
+              />
+            ))}
+          </div>
+
         </div>
-        <HeroCards cards={cardsData} />
+
       </div>
     </section>
   );

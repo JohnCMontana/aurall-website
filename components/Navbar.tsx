@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 import Button from "./buttons/Button";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   return (
@@ -30,24 +31,25 @@ export default function Navbar() {
 
         {/* Center nav */}
         <div className="flex gap-4 ml-10 md:ml-20">
-          <Link href="#Productos" className="hover:opacity-70 transition nav-link-item">
+          <Link href="#Productos" className="transition nav-link-item">
             Productos
             <span className="text-foreground text-2xl">+</span>
           </Link>
-          <Link href="#Soluciones" className="hover:opacity-70 transition nav-link-item">
+          <Link href="#Soluciones" className="rounded-full transition nav-link-item">
             Soluciones
           </Link>
-          <Link href="#Recursos" className="hover:opacity-70 transition nav-link-item">
+          <Link href="#Recursos" className="transition nav-link-item">
             Recursos
             <span className="text-foreground text-2xl">+</span>
           </Link>
-          <Link href="#Empresa" className="hover:opacity-70 transition nav-link-item">
+          <Link href="#Empresa" className="rounded-full transition nav-link-item">
             Empresa
           </Link>
         </div>
 
         {/* Actions */}
         <div className="flex items-center gap-4 ml-auto">
+          <LanguageSwitcher /> {/* Use the new LanguageSwitcher component */}
           <Button href="/">Comenzar</Button>
 
             {/* 

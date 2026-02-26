@@ -36,34 +36,15 @@ const ImageCard: React.FC<HowItWorksProps> = ({
   );
 };
 
-export default function HowItWorks() {
-  const cardsData = [
-    {
-      title: "Grabación",
-      description: "Captura continua de voz y otros canales críticos.",
-      imageSrc: "/placeholder-grabacion.png",
-      imageAlt: "Grabación illustration",
-    },
-    {
-      title: "Análisis",
-      description: "Búsqueda, clasificación y alertas basadas en contenido real.",
-      imageSrc: "/placeholder-analisis.png",
-      imageAlt: "Análisis illustration",
-    },
-    {
-      title: "Cumplimiento",
-      description: "Trazabilidad, auditoría y evidencias automáticas.",
-      imageSrc: "/placeholder-cumplimiento.png",
-      imageAlt: "Cumplimiento illustration",
-    },
-    {
-      title: "Seguridad",
-      description: "El dato siempre bajo tu control.",
-      imageSrc: "/placeholder-seguridad.png",
-      imageAlt: "Seguridad illustration",
-    },
-  ];
+import { features } from "@/data/features";
 
+export default function HowItWorks() {
+  const cardsData = features.map((feature, index) => ({
+    title: feature.title,
+    description: feature.description,
+    imageSrc: `/placeholder-${index + 1}.png`,
+    imageAlt: `${feature.title} illustration`,
+  }));
   return (
     <section className="relative z-10 w-full px-4 py-12 sm:py-16 md:py-20 bg-background">
       <div className="max-w-7xl mx-auto">

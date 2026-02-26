@@ -30,7 +30,7 @@
 }
 
 .nav-link-item {
-  @apply bg-gray-500/10 text-foreground text-sm px-6 py-1 flex items-center gap-1;
+  @apply bg-foreground/10 hover:bg-foreground/12 text-foreground text-sm px-6 py-1 flex items-center gap-1;
 }
 
 /* -------------------------
