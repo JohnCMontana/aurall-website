@@ -55,7 +55,7 @@ export default function HowItWorks() {
           Control total sobre tus <br />
           interacciones
         </h2>
-        <p className="mt-4 text-secondary max-w-3xl mx-auto text-center text-lg">
+        <p className="mt-4 text-foreground/80 max-w-3xl mx-auto text-center text-lg">
           Desde la captura hasta la auditoría, sin dependencias externas.
         </p>
 

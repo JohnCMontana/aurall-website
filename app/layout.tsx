@@ -46,7 +46,7 @@ export default function RootLayout({
           </div>
 
           {/* Page content (CONSTRAINED) */}
-          <main className="relative z-10 max-w-[1440px] mx-auto w-full px-4">
+          <main className="relative z-10">
             {children}
             <Footer />
           </main>

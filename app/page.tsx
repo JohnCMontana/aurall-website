@@ -1,30 +1,18 @@
-"use client";
-
 import FeaturesBento from "@/components/FeaturesBento";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import Productos from "@/components/Productos";
-import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const router = useRouter();
-  const currentLocale = router.locale;
-
   return (
     <>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-screen flex flex-col gap-20">
         <Hero />
-        {/* Example of translated content */}
-        <div className="text-center py-8">
-          {currentLocale === 'es' ? (
-            <p className="text-lg">¡Bienvenido a nuestra aplicación!</p>
-          ) : (
-            <p className="text-lg">Welcome to our application!</p>
-          )}
+        <div className="max-w-[1200px] mx-auto w-full px-4">
+          <FeaturesBento />
+          <Productos />
+          <HowItWorks />
         </div>
-        <FeaturesBento />
-        <Productos />
-        <HowItWorks />
       </div>
     </>
   )
