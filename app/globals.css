@@ -44,6 +44,10 @@
   --font-mono: var(--font-space-mono);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   background: var(--background);
@@ -155,3 +159,4 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .scroll-track { animation: none; }
 }
+

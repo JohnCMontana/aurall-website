@@ -1,8 +1,6 @@
 import Button from "./buttons/Button";
 import TiltedCard from "./cards/TiltedCard";
-import Image from "next/image";
 import ButtonVideo from "./buttons/ButtonVideo";
-import HeroCards from "./HeroCards";
 import { features } from "@/data/features";
 import { BackgroundBeams } from "./ui/background-beams";
 
@@ -13,13 +11,14 @@ export default function Hero() {
 
       <div className="relative z-10 grid gap-8 items-center">
         <div className="md:col-span-1 flex flex-col items-center text-center gap-4">
-          <h1 className="relative z-10 font-semibold text-foreground/90 text-xl sm:text-3xl lg:text-6xl leading-tight">
+          <h1 className="relative z-10 font-semibold text-foreground sm:text-3xl lg:text-5xl leading-tight">
             Sistema de Grabación <br />
             de Comunicaciones Críticas
           </h1>
 
-          <h3 className="my-4 text-foreground/80 text-md sm:text-lg">
-            Plataforma avanzada de grabación y análisis multimodal con IA para entornos críticos y corporativos.
+          <h3 className="my-4 text-foreground/60 text-md sm:text-lg">
+            Plataforma avanzada de grabación y análisis multimodal con <br />
+            IA para entornos críticos y corporativos.
           </h3>
 
           <div className="relative flex flex-col sm:flex-row items-center justify-start mb-8 sm:mb-10 gap-3 sm:gap-4 z-10">
@@ -36,7 +35,6 @@ export default function Hero() {
               />
             ))}
           </div>
-
         </div>
 
       </div>

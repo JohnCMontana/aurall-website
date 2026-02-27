@@ -18,12 +18,11 @@ const ButtonVideo = ({
       <span
         className={`
           relative inline-flex items-center gap-2 px-5 py-2.5 font-normal
-          transition-transform duration-200 hover:scale-105
           cursor-pointer overflow-hidden
-          bg-transparent
+          bg-transparent hover:bg-foreground/5
           text-sm text-foreground/90
           border border-foreground/70
-          rounded-full
+          rounded-xl
           ${className}
         `}
         aria-label={label}
