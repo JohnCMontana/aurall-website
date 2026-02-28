@@ -57,9 +57,9 @@ export default function FeaturesBento() {
                       {feature.description}
                     </p>
                     {/* Progress line */}
-                    <div className="h-0.5 bg-foreground/20 rounded-full mt-2">
+                    <div className="h-0.5 bg-foreground/10 rounded-full mt-2">
                       <div
-                        className={`h-full bg-primary/50 rounded-full ${
+                        className={`h-full bg-primary/60 rounded-full ${
                           index === activeIndex
                             ? "w-full transition-all duration-5000 ease-linear"
                             : "w-0"
