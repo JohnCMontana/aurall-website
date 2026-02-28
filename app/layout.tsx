@@ -41,12 +41,12 @@ export default function RootLayout({
         */}
       
           {/* Sticky navbar (FULL WIDTH, NOT CONSTRAINED) */}
-          <div className="sticky top-0 z-30 w-full">
+          <div className="relative z-30">
             <Navbar />
           </div>
 
           {/* Page content (CONSTRAINED) */}
-          <main className="relative z-10">
+          <main className="relative z-10 pt-[70px]">
             {children}
             <Footer />
           </main>

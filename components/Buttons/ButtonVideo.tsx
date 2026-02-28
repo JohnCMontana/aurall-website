@@ -21,7 +21,7 @@ const ButtonVideo = ({
           cursor-pointer overflow-hidden
           bg-transparent hover:bg-foreground/5
           text-sm text-foreground/90
-          border border-foreground/70
+          border border-foreground/20
           rounded-xl
           ${className}
         `}

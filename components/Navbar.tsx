@@ -1,12 +1,41 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 import Button from "./buttons/Button";
+import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="w-full bg-background/40 backdrop-blur-md border-b border-foreground/10">
-      <div className="relative max-w-[1200px] mx-auto flex items-center justify-between px-4 py-1">
+    <nav
+      className={cn(
+        "fixed left-1/2 -translate-x-1/2 transition-all duration-300 z-30",
+        scrolled
+          ? "top-4 w-[calc(100%-4rem)] max-w-[1200px] rounded-2xl border border-foreground/10 bg-background/80 backdrop-blur-sm drop-shadow-md" // Scrolled state (capsule)
+          : "top-0 w-full bg-background/40 backdrop-blur-md border-b border-foreground/10" // Unscrolled state (full width)
+      )}
+    >
+      <div className="relative max-w-[1200px] mx-auto flex items-center justify-between px-3 py-0.5">
         {/* Logo */}
         <Link href="/" className="flex items-center text-foreground/90">
           <Image

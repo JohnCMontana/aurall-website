@@ -5,7 +5,7 @@ export default function ClientLogosGrid() {
     <div className="relative z-10 w-full py-12">
       <div className="max-w-[1200px] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-0 border border-foreground/10 rounded-lg overflow-hidden">
         
-        <div className="col-span-2 flex items-center justify-center p-6 border border-foreground/10">
+        <div className="col-span-2 flex items-center justify-center py-6 px-16 border border-foreground/10">
           <p className="text-sm uppercase text-foreground/60 text-start">
             Equipos que transforman sus comunicaciones críticas en información segura y accionable.
           </p>
