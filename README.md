@@ -6,13 +6,13 @@ This repository contains the full frontend architecture, design system, and prod
 🚀
 The Aurall Website is built to communicate:
 
-  🎧 Intelligent interaction recording
+  · 🎧 Intelligent interaction recording
   
-  🔐 Security-first architecture
+  · 🔐 Security-first architecture
   
-  📊 Structured, actionable insights
+  · 📊 Structured, actionable insights
   
-  ⚡ High-performance, scalable infrastructure
+  · ⚡ High-performance, scalable infrastructure
 
 🛠
 Tech Stack
